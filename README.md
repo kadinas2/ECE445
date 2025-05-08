@@ -7,13 +7,9 @@ The goal of this project was to develop a smart tripod capable of both manual an
 
 ## Final design
 Below is an image of the motorized tripod system. The PCB is inside the black box  
-<center>
   ![Image](images/motorized_tripod.jpg)
-</center>
 
 This next image is a photo of the controller. The PCB for the controller system, designed by Henry Thomas, is inside along with a Raspberry Pi for running OpenCV.
-<center>
   ![Image](images/controller.jpg)
-</center>
 
 
