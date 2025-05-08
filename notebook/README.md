@@ -5,7 +5,7 @@ Entries:
 [2025-02-18](##2025-02-18)  
 [2025-02-20](##2025-02-20)  
 [2025-02-25](##2025-02-25)  
-[2025-03-02](##-2025---03---02)  
+[2025-03-02](##2025-03-02)  
 [2025-02-25](##2025-02-25)  
 
 
@@ -26,7 +26,7 @@ Started working on both the controller PCB and the motorized tripod PCB. I'm goi
 
 ![image](../images/33V_initial_design.jpg)
 
-## 2025 - 03 - 02
+## 2025-03-02
 Finished the first round PCB orders. The current PCB design can be seen below. The buck ICs are expected to arrive in a day or two, so I'm going to put my focus into designing the breadboard circuit to test it. Henry and I did end up figuring out how to flash, and it doesn't require, supposedly the ESP32-S3 has a built in SPI flash, so we won't need to have USB to UART bridge or USB to SPI bridge. The differential pair of the MicroUSB can be connected straight to the ESP32-S3.  
 
 Currently, Henry and I are testing different circuit schematics. I'm unsure of if we're going to be able to run power through a switch, as I'm concerned about power loss. I also want to integrate the same 5V plane, so you're able to use the motorized tripod while it's being plugged in, so I've added reverse polarized Schottky diodes at the MicroUSB and 5V buck converter, so we don't get back current through either the IC or the MicroUSB. I've also added additional Schottkys as flybacks for the servo motors, as I'm unsure of if the servos will have built in schottkys. Best case scenario, is we won't need to include the Schottkys.  
