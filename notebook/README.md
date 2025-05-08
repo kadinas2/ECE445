@@ -6,9 +6,14 @@ Entries:
 [2025-02-20](#2025---02---20)  
 [2025-02-25](#2025---02---25)  
 [2025-03-02](#2025---03---02)  
-[2025-02-25](#2025---02---25)  
-
-
+[2025-03-07](#2025---03---07)  
+[2025-03-09](#2025---03---09)  
+[2025-03-26](#2025---03---26) 
+[2025-03-30](#2025---03---30)  
+[2025-04-10](#2025---04---10)
+[2025-04-20](#2025---04---20)
+[2025-04-27](#2025---04---27)
+  
 
 ## 2025 - 02 - 11
 Worked on the proposal, looking into designing the power systems. So far we're working with two ESP32-S3's for their WiFi availability. As per the [documentation](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf) for the ESP32-S3 it recommends a 1A power source at 3.3V with + or - 100 mV accuracy. The Raspberry Pi recommended [documentation](https://www.raspberrypi.com/documentation/) suggest using a 5.1V power supply with the same + or - 100mV accuracy, and a suggested 3.5A available current supply. This is likely higher than what we will use, as we're only using the the RasPi for computational work with OpenCV as well as for the SPI video display. We're going to estimate a total maximum instantaneous current draw of 3A for the raspberry pi and 1A for the ESP32-S3
