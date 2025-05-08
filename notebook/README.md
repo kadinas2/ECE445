@@ -1,3 +1,5 @@
+[2025-02-11](2025-02-11)
+
 ## 2025 - 02 - 11
 Worked on the proposal, looking into designing the power systems. So far we're working with two ESP32-S3's for their WiFi availability. As per the [documentation](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf) for the ESP32-S3 it recommends a 1A power source at 3.3V with + or - 100 mV accuracy. The Raspberry Pi recommended [documentation](https://www.raspberrypi.com/documentation/) suggest using a 5.1V power supply with the same + or - 100mV accuracy, and a suggested 3.5A available current supply. This is likely higher than what we will use, as we're only using the the RasPi for computational work with OpenCV as well as for the SPI video display. We're going to estimate a total maximum instantaneous current draw of 3A for the raspberry pi and 1A for the ESP32-S3
 ## 2025 - 02 - 18
@@ -43,10 +45,30 @@ Looking forward, I want to work on the third round designs and then finish up wi
 ## 2025 - 03 - 30
 I've been focusing on the third round designs and working with the tripod PCB power system, as I've gotten that one to work properly. I've been testing the output of the 5V and the 3.3V, and I noticed that with my current design layout, I'm seeing the buck converter's noise couple into each other, instead of getting filtered out through the 3.3V converter. This design layout had used the 3.3V converter on the output of the 5V converter, so we're going to switch to the buck converter's in parallel, both having the 7.4V input. This should ensure that the rouhgly 800 mV of noise we're noticing on the 3.3V buck converter doesn't harm our internal ESP32-S3.
 
-This time I added 100nF filter capacitors at the servo motor outputs with larger 8x12 electrolytic capacitor positions, for adding capacitors later, if we should need more filtering on our voltage lines near the servo motors. I also added a small resistor network into the buck converter outputs, to allow us to tune them. a total of 3 in paralle with two more in series of that, shown in the image below.  
+This time I added 100nF filter capacitors at the servo motor outputs with larger 8x12 electrolytic capacitor positions, for adding capacitors later, if we should need more filtering on our voltage lines near the servo motors. I also added a small resistor network into the buck converter outputs, to allow us to tune them. A total of 3 in parallel with two more in series of that, shown in the image below.  
 
   ![image](../images/final_buck_sch.png)
   
 We've also decided to add two linear regulators. the [AZ1117-3.3](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/835/AZ1117_Rev5.3_Jan2019_DS.pdf)
 and the [MIC29300-5.0WU-TR](https://ww1.microchip.com/downloads/en/DeviceDoc/MIC2915x-30x-50x-75x-High-Current-Low-Dropout-Regulators-DS20005685B.pdf). These are a 3.3V 1A LDO and a 5V 3A LDO respectively. These will be going on the outputs of our buck converters to help regulate the voltage. We did test the buck converter with the AZ1117-3.3 today, and we found it to have roughly a 40mV peak to peak noise, which is well within our margins, so moving forward with an LDO is the easiest option. 
+
+While we wait on third round PCBs, I'll be working on more motor control, and determining if our servo motors are strong enough.
+
+## 2025 - 4 - 10
+We got out parts back from the machine shop, and have enough to work with to prove that our motors are not very functional. This is just using the breadboard circuits we developed, but the motors cap out at around 700mA, and stall when trying to life the phone past a 45 degree angle. This is insufficient for our design, so we're going to move forward with a [higher torque servo motor](https://www.amazon.com/Miuzei-Torque-Digital-Waterproof-Control/dp/B07HNTKSZT?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A34CQKEVNF2MJX&gQT=1).
+
+  Third round PCBs also came in so we'll see what happens with our design, hopefully everything works as efficiently as we needed to. I'm still waiting on the Fourth round orders for the parallel buck converter design.
+
+## 2025 - 4 - 20
+We got our new servos, and the breadboarded design working. I had to adjust the bracket slighlty on the phone mount, which can be seen below. Besides that we're still just waiting on fourth round orders to come in, which should be sometime this week. So far, the controller PCB does work, and should be at least something to show during the mock demo.
+
+![image](../images/motor_mount.jpg)
+
+## 2025 - 4 - 27
+I haven't been able to work on the design very much this week, but I was told by Henry and Miguel that the project went together a lot smoother than we anticipated. There were a few blown capacitors, for reasons unknown, but it looks like our design has met all the high level requirements we set forth. We just need to start working on documentation for our design. Since our design works, I'll be posting the additional pictures of my finalized PCBs below and will close out the document unless further design changes arrive over the next few days. PCB files should be found [here](../kicad/Group_29_Handheld)
+
+![image](../images/final_sch.png)
+
+![image](../images/tripod_pcb_final.jpg)
+
 
