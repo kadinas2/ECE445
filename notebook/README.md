@@ -8,10 +8,10 @@ Entries:
 [2025-03-02](#2025---03---02)  
 [2025-03-07](#2025---03---07)  
 [2025-03-09](#2025---03---09)  
-[2025-03-26](#2025---03---26) 
+[2025-03-26](#2025---03---26)  
 [2025-03-30](#2025---03---30)  
-[2025-04-10](#2025---04---10)
-[2025-04-20](#2025---04---20)
+[2025-04-10](#2025---04---10)  
+[2025-04-20](#2025---04---20)  
 [2025-04-27](#2025---04---27)
   
 
@@ -69,17 +69,17 @@ and the [MIC29300-5.0WU-TR](https://ww1.microchip.com/downloads/en/DeviceDoc/MIC
 
 While we wait on third round PCBs, I'll be working on more motor control, and determining if our servo motors are strong enough.
 
-## 2025 - 4 - 10
+## 2025 - 04 - 10
 We got out parts back from the machine shop, and have enough to work with to prove that our motors are not very functional. This is just using the breadboard circuits we developed, but the motors cap out at around 700mA, and stall when trying to life the phone past a 45 degree angle. This is insufficient for our design, so we're going to move forward with a [higher torque servo motor](https://www.amazon.com/Miuzei-Torque-Digital-Waterproof-Control/dp/B07HNTKSZT?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A34CQKEVNF2MJX&gQT=1).
 
   Third round PCBs also came in so we'll see what happens with our design, hopefully everything works as efficiently as we needed to. I'm still waiting on the Fourth round orders for the parallel buck converter design.
 
-## 2025 - 4 - 20
+## 2025 - 04 - 20
 We got our new servos, and the breadboarded design working. I had to adjust the bracket slighlty on the phone mount, which can be seen below. Besides that we're still just waiting on fourth round orders to come in, which should be sometime this week. So far, the controller PCB does work, and should be at least something to show during the mock demo.
 
 ![image](../images/motor_mount.jpg)
 
-## 2025 - 4 - 27
+## 2025 - 04 - 27
 I haven't been able to work on the design very much this week, but I was told by Henry and Miguel that the project went together a lot smoother than we anticipated. There were a few blown capacitors, for reasons unknown, but it looks like our design has met all the high level requirements we set forth. We just need to start working on documentation for our design. Since our design works, I'll be posting the additional pictures of my finalized PCBs below and will close out the document unless further design changes arrive over the next few days. PCB files should be found [here](../kicad/Group_29_Handheld)
 
 ![image](../images/final_sch.png)
