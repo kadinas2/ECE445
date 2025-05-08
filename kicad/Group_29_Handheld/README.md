@@ -4,3 +4,6 @@ The above files are set as Handheld, however they are the files for the motorize
 
 # Original PCB
 ![Image](../../images/tripod_pcb_original.jpg)
+
+# Final PCB
+![Image](../../images/tripod_pcb_final.jpg)
